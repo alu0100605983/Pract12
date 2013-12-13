@@ -159,6 +159,22 @@ class Matriz
 	end
 
 
+	#==Metodo resta
+	#Resta dos matrices, ya sean densas o dispersas
+	def -(other)
+		
+		if(@fil == other.fil && @col == other.col)
+		aux = Matriz.new(@fil,@col)
+			 @fil.times do |i| 
+				@col.times do |j|
+				aux[i,j]=(self[i,j] - other[i,j])
+				end
+			end
+		end	
+		return Matriz.constructorcop(aux)
+	end
+
+
 	#==Metodo multiplicacion
 	#Multiplica dos matrices  ya sean densas o dispersas
 	def *(other)

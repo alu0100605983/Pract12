@@ -19,7 +19,7 @@ end
 
 desc "Pruebas Integracion"
 task :spec do
-	sh "rspec -I. spec/dsl.rb"
+	sh "rspec -I. spec/matrices_spec.rb"
 end
 
 desc "Ejecutar binario"

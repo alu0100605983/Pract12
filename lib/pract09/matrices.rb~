@@ -159,6 +159,22 @@ class Matriz
 	end
 
 
+	#==Metodo resta
+	#Resta dos matrices, ya sean densas o dispersas
+	def +(other)
+		
+		if(@fil == other.fil && @col == other.col)
+		aux = Matriz.new(@fil,@col)
+			 @fil.times do |i| 
+				@col.times do |j|
+				aux[i,j]=(self[i,j] - other[i,j])
+				end
+			end
+		end	
+		return Matriz.constructorcop(aux)
+	end
+
+
 	#==Metodo multiplicacion
 	#Multiplica dos matrices  ya sean densas o dispersas
 	def *(other)
@@ -192,13 +208,13 @@ class Matriz
 	end 
 
 	def encontrar()
-		for i in 0...@fil
-				for j in 0...@col
-					value=self[i,j]
-					if(yield(value))
-						return [i,j]
-					end
+		@fil.times do |i|
+			@col.times do |j|
+				value=self[i,j]
+				if(yield(value))
+					return [i,j]
 				end
+			end
 			
 		end 
 		return nil

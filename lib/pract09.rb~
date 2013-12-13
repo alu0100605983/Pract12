@@ -5,6 +5,5 @@ module Prac09
 load "lib/pract09/fraccion.rb"
 load "lib/pract09/matrices.rb"
 load "lib/pract09/matrizDispersa.rb"
-load "lib/pract09/dsl.rb"
 
 end
